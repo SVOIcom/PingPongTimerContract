@@ -79,7 +79,7 @@ contract PongContract {
             // get value from it
             (uint256 time, address cont) = minTime.get();
             // check if it is time to wake up contracts
-            if (time < now)
+            if (time > now)
                 break;
             // call contract if it is time
             WakeInterface(cont).call();
